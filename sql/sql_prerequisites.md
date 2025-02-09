@@ -1,0 +1,4 @@
+# Пререквизиты для модуля SQL  
+1. Скачайте и установите Postgres [по этой ссылке](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). Здесь [видео по установке](https://drive.google.com/file/d/1p60CWvDA0OcqG2JHDBiEm2QVSBNR3rIR/view?usp=sharing).     
+2. Скачайте и установите DBeaver Community [по этой ссылке](https://dbeaver.io/download/). Здесь [видео по установке](https://drive.google.com/file/d/1pHs641dy1z5_ixSXIhCHTrYQ3DkHHX0t/view?usp=sharing).    
+3. Скачайте файл скрипта для создания обучающего датасета Chinook [по этой ссылке](https://drive.google.com/file/d/1o9WSNO2SRj-JX5hr5Y57AWrwi6aEpQ53/view?usp=sharing)
