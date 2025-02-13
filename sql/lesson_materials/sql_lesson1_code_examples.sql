@@ -99,3 +99,63 @@ select *
 from track
 where
 	composer is not null
+;
+
+select 
+	sum(total)
+	, avg(total)
+	, min(total)
+	, max(total)
+	, count(customer_id)
+	, count(distinct customer_id)
+from invoice;
+
+select 
+	distinct customer_id
+from customer;
+
+select distinct
+	country
+	, state
+from customer;
+
+select 
+	country
+	, count(customer_id) as customer_cnt
+from customer
+group by
+	country
+;
+
+/*
+1. from
+2. where
+3. group by
+4. select
+5. offset
+6. limit
+*/
+
+select 
+	country
+	, count(customer_id) as customer_cnt
+from customer
+where
+	country != 'USA'
+group by
+	country
+having
+	count(customer_id) > 2
+order by
+	customer_cnt desc
+;
+
+select 
+	country
+	, state
+	, count(customer_id) as customer_cnt
+from customer
+group by
+	country
+	, state
+;
