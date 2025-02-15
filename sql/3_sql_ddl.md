@@ -180,4 +180,20 @@ engine = db.create_engine(connection_string)
 Подключение к базе данных: 
 ```python
 conn = engine.connect()
-```
+```  
+
+Иногда подключение с использованием строки может не сработать. В таком случае, можно попробовать создать подключение используя метод `URL`.  
+```python
+from sqlalchemy.engine import URL  
+
+connection_url = URL.create(
+    drivername="postgresql+psycopg2",
+    username = user,
+    password = password,
+    host = host,
+    port = port
+)  
+
+engine = create_engine(connection_url)
+conn = engine.connect()
+```  
