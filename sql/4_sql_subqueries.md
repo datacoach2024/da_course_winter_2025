@@ -60,12 +60,31 @@ from (
 )
 ```  
 
+## Коррелирующие подзапросы  
 **Коррелирующий подзапрос** - это подзапрос, который выполняется для каждой отдельной строки внешнего запроса.  
+
+**Пример**. Предположим, у вас есть таблица `employees` с колонками `id`, `name`, `department_id` и `salary`. Вы хотите найти сотрудников, чья зарплата выше средней зарплаты в их отделе.
 ```sql
-select
-    <select >
-from <table1> t1
+select name, department_id, salary
+from employees e1
+where salary > (
+    select avg(salary)
+    from employees e2
+    where e1.department_id = e2.department_id
+);
 ```
 
+## Общие табличные выражения  
+**CTE (Common Table Expression)** - это временный результирующий набор данных, к которому можно обращаться из других запросов.  
 
-**CTE (Common Table Expression)** - это временный результирующий набор данных, к которому можно обращаться из других запросов
+Синтаксис при использовании CTE выглядит следующим образом:  
+```sql
+with
+<cte_name> as (
+    select *
+    from <table>
+) 
+select *
+from <cte_name>
+```  
+
